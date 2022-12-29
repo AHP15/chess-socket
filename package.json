@@ -1,0 +1,27 @@
+{
+  "name": "chess-socket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdessittir/chess-socket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abdessittir/chess-socket/issues"
+  },
+  "homepage": "https://github.com/Abdessittir/chess-socket#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "jsonwebtoken": "^9.0.0",
+    "nodemon": "^2.0.20",
+    "socket.io": "^4.5.4"
+  }
+}
