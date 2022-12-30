@@ -4,6 +4,9 @@ import dotenv from 'dotenv';
 
 import { createServer } from "http";
 
+import gameNamespace from './namespaces/games.js';
+import challengeNamespace from "./namespaces/challenges.js";
+
 dotenv.config();
 
 const httpServer = createServer();
@@ -32,16 +35,22 @@ io.use((socket, next) => {
   });
 });
 
+/*
+
 io.on("connection", (socket) => {
   console.log("user connetced", socket.id);
 
-  socket.on("register", user => {
-    socket.emit('register_success');
+  socket.on("challenge", (data) => {
+    console.log("challenge by", data);
   });
 
   socket.conn.on("close", () => {
     console.log(socket.id, "closed");
   });
 });
+*/
+
+challengeNamespace(io);
+gameNamespace(io);
 
 io.listen(8081);
