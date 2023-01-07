@@ -1,4 +1,4 @@
-const challengeNamespace = (socket) => {
+const userNamespace = (socket) => {
   const challenges = socket.of('/challenges');
 
   challenges.on('connection', (socket) => {
