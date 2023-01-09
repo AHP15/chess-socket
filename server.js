@@ -35,19 +35,19 @@ io.use((socket, next) => {
   });
 });
 
-/*
-challengeNamespace(io);
-gameNamespace(io);
-*/
 
 io.on('connection', (socket) => {
   socket.on('user', (email) => {
     socket.join(email);
-    console.log(email);
   });
 
-  socket.on('challenge-sent', ({ id, email }) => {
-    io.to(email).emit('challenge-recieved', { id, email })
+  socket.on('challenge-sent', (challenge) => {
+    io.to(challenge.to.email).emit('challenge-recieved', challenge)
+  });
+
+  socket.on('accept-challenge', (challenge) => {
+    io.to(challenge.by.email).emit('challenge-accepted', challenge);
+    io.to(challenge.to.email).emit('chellenge-accepted', challenge);
   });
 });
 
