@@ -47,7 +47,7 @@ io.on('connection', (socket) => {
 
   socket.on('accept-challenge', (challenge) => {
     io.to(challenge.by.email).emit('challenge-accepted', challenge);
-    io.to(challenge.to.email).emit('chellenge-accepted', challenge);
+    io.to(challenge.to.email).emit('challenge-accepted', challenge);
   });
 });
 
