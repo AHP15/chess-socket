@@ -49,6 +49,10 @@ io.on('connection', (socket) => {
     io.to(challenge.by.email).emit('challenge-accepted', challenge);
     io.to(challenge.to.email).emit('challenge-accepted', challenge);
   });
+
+  socket.on('move-sent', ({ newPieces, email }) => {
+    io.to(email).emit('move-received', newPieces);
+  });
 });
 
 io.listen(8081);
