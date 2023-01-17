@@ -20,7 +20,6 @@ io.use((socket, next) => {
   const token = socket.handshake.auth.token;
 
   if (!token) {
-    console.log('bad');
     const error = new Error('No token provided!');
     return next(error);
   }
