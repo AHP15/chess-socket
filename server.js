@@ -4,8 +4,6 @@ import dotenv from 'dotenv';
 
 import { createServer } from "http";
 
-// import gameNamespace from './namespaces/games.js';
-// import challengeNamespace from "./namespaces/user.js";
 
 dotenv.config();
 
